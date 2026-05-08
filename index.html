@@ -519,8 +519,28 @@
       .hero { padding: 140px var(--space-5) 100px; }
     }
   </style>
+
+  <!--
+    Google Tag Manager
+    NOTA: snippet vendor de Google. Se mantiene tal cual (incluido el `var`)
+    para que actualizaciones del panel de GTM se puedan pegar sin diff.
+    Trade-off conocido: introduce un CDN de terceros (googletagmanager.com)
+    en contradicción con la regla "sin dependencias externas". El `async`
+    evita bloquear el parser; aun así impacta TBT/INP en ~50–150ms.
+  -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PT47RX3J');</script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) — debe ir inmediatamente después de <body> -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT47RX3J"
+  height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Sentinel para nav (IntersectionObserver, evita listener de scroll) -->
   <div class="nav-sentinel" aria-hidden="true"></div>
@@ -562,7 +582,7 @@
         Fideliza a tus clientes con un programa de puntos en minutos. Sin apps complicadas — solo escanean el QR y acumulan puntos.
       </p>
       <div class="hero-actions">
-        <a href="https://app.puntix.com.mx/registro" class="btn-primary" rel="noopener">
+        <a href="https://app.puntix.com.mx/registro" class="btn-primary" rel="noopener" data-cta-location="hero_primary">
           Empieza gratis ahora →
         </a>
         <a href="#como-funciona" class="btn-secondary">
@@ -797,7 +817,7 @@
               <li>Dashboard básico</li>
               <li>QR personalizado</li>
             </ul>
-            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--outline" rel="noopener">Empezar gratis</a>
+            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--outline" rel="noopener" data-cta-location="pricing_basic">Empezar gratis</a>
           </article>
 
           <article class="plan plan--popular reveal reveal--delay-1">
@@ -818,7 +838,7 @@
               <li>Gestión de cajeros</li>
               <li>Soporte prioritario</li>
             </ul>
-            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--filled" rel="noopener">Empezar gratis</a>
+            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--filled" rel="noopener" data-cta-location="pricing_pro">Empezar gratis</a>
           </article>
 
           <article class="plan reveal reveal--delay-2">
@@ -839,7 +859,7 @@
               <li>Soporte dedicado</li>
               <li>Reportes exportables</li>
             </ul>
-            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--outline" rel="noopener">Empezar gratis</a>
+            <a href="https://app.puntix.com.mx/registro" class="plan-cta plan-cta--outline" rel="noopener" data-cta-location="pricing_premium">Empezar gratis</a>
           </article>
         </div>
       </div>
@@ -953,7 +973,7 @@
         <div class="reveal">
           <h2 id="cta-title">¿Listo para fidelizar<br>a tus clientes?</h2>
           <p class="section-sub section-sub--on-dark section-sub--centered">Únete a los negocios que ya usan Puntix. 30 días gratis, sin tarjeta de crédito.</p>
-          <a href="https://app.puntix.com.mx/registro" class="cta-btn" rel="noopener">
+          <a href="https://app.puntix.com.mx/registro" class="cta-btn" rel="noopener" data-cta-location="final_cta">
             Empieza gratis ahora →
           </a>
           <p class="cta-note">Sin tarjeta de crédito · Cancela cuando quieras · Soporte en español</p>
@@ -973,7 +993,7 @@
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://app.puntix.com.mx/registro" rel="noopener">Registrarse</a></li>
+        <li><a href="https://app.puntix.com.mx/registro" rel="noopener" data-cta-location="footer_signup">Registrarse</a></li>
         <li><a href="https://app.puntix.com.mx/auth/login" rel="noopener">Iniciar sesión</a></li>
       </ul>
       <p class="footer-copy">© 2026 Puntix · Hecho con ❤️ en México</p>

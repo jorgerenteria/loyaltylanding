@@ -135,6 +135,48 @@
   };
 
   /**
+   * Trackeo de CTAs hacia GA4 vía GTM dataLayer.
+   * Un solo listener delegado en `document` — se dispara con cualquier click
+   * cuyo target (o ancestro) tenga `[data-cta-location]`.
+   *
+   * Empuja un evento `cta_click` con:
+   *   - cta_location:    valor del atributo (ej. "hero_primary")
+   *   - cta_text:        texto visible del enlace
+   *   - cta_destination: href de destino
+   *
+   * El push es síncrono y ocurre antes de la navegación. GA4 usa `sendBeacon`
+   * por defecto, así que el evento sobrevive a la navegación cross-origin.
+   */
+  const initCtaTracking = () => {
+    try {
+      // Garantiza que dataLayer exista aun si GTM falla en cargar.
+      window.dataLayer = window.dataLayer || [];
+
+      document.addEventListener('click', (event) => {
+        try {
+          const target = event.target.closest('[data-cta-location]');
+          if (!target) return;
+
+          const location = target.getAttribute('data-cta-location') || 'unknown';
+          const text = (target.textContent || '').trim().replace(/\s+/g, ' ');
+          const destination = target.getAttribute('href') || '';
+
+          window.dataLayer.push({
+            event: 'cta_click',
+            cta_location: location,
+            cta_text: text,
+            cta_destination: destination,
+          });
+        } catch (err) {
+          console.error('[ctaTracking] click error:', err);
+        }
+      });
+    } catch (err) {
+      console.error('[ctaTracking] init failed:', err);
+    }
+  };
+
+  /**
    * Bootstrap.
    */
   const init = () => {
@@ -143,6 +185,7 @@
       initFaq();
       initReveal();
       initNavScroll();
+      initCtaTracking();
     } catch (err) {
       console.error('[app] init failed:', err);
     }
