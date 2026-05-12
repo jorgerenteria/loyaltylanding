@@ -7,7 +7,7 @@
   <meta name="robots" content="index,follow">
 
   <title>Puntix — Tu tarjetita de sellos, pero digital</title>
-  <meta name="description" content="Fideliza a tus clientes con un programa de puntos digital. Sin apps, sin complicaciones. Solo escanean el QR y acumulan puntos. Prueba gratis 30 días.">
+  <meta name="description" content="Fideliza a los clientes de tu negocio con un programa de puntos digital. Sin apps, sin complicaciones. Solo escanean el QR y acumulan puntos. Prueba gratis 30 días.">
   <meta name="keywords" content="programa de lealtad, programa de puntos, fidelización clientes, PyME México, tarjeta de sellos digital, cafetería, restaurante, barbería">
 
   <link rel="canonical" href="https://puntix.mx">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Puntix">
   <meta property="og:locale" content="es_MX">
   <meta property="og:title" content="Puntix — Tu tarjetita de sellos, pero digital">
-  <meta property="og:description" content="Fideliza a tus clientes con un programa de puntos digital. Sin apps, sin complicaciones. Solo escanean el QR y acumulan puntos.">
+  <meta property="og:description" content="Fideliza a los clientes de tu negocio con un programa de puntos digital. Sin apps, sin complicaciones. Solo escanean el QR y acumulan puntos.">
   <meta property="og:url" content="https://puntix.mx">
   <meta property="og:image" content="https://puntix.mx/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -30,7 +30,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Puntix — Tu tarjetita de sellos, pero digital">
-  <meta name="twitter:description" content="Fideliza a tus clientes con un programa de puntos digital. Sin apps, sin complicaciones.">
+  <meta name="twitter:description" content="Fideliza a los clientes de tu negocio con un programa de puntos digital. Sin apps, sin complicaciones.">
   <meta name="twitter:image" content="https://puntix.mx/og-image.jpg">
   <meta name="twitter:image:alt" content="Puntix — programa de lealtad digital para PyMEs">
 
@@ -310,6 +310,68 @@
       animation: fadeUp .6s .3s ease both;
     }
 
+    /* ── Hero Why ── */
+    .hero-why {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      margin-top: var(--space-6);
+      animation: fadeUp .6s .4s ease both;
+      text-align: left;
+    }
+
+    .hero-why-img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-why-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .hero-why-title {
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      letter-spacing: -.01em;
+    }
+
+    .hero-why-stats {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-why-stats li {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: var(--space-4) var(--space-5);
+    }
+
+    .hero-why-stats li:nth-child(odd)  { border-right: 1px solid var(--border); }
+    .hero-why-stats li:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+
+    .hero-why-stat-num {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+
+    .hero-why-stat-label {
+      font-size: 13px;
+      color: var(--punch);
+      line-height: 1.4;
+    }
+
     /* ── Botones ── */
     .btn-primary {
       display: inline-flex;
@@ -461,8 +523,16 @@
     .dash-bar-fill--82 { width: 82%; }
     .dash-bar-fill--60 { width: 60%; }
 
-    /* Mockup phone oculto en mobile, aparece desde tablet */
-    .mockup-phone { display: none; }
+    /* Mockup phone: visible en mobile centrado, absoluto desde tablet */
+    .mockup-phone {
+      display: block;
+      width: 100%;
+      background: var(--ink);
+      border-radius: 32px;
+      padding: var(--space-3);
+      box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,.1);
+      margin: var(--space-5) auto 0;
+    }
 
     /* ── Animaciones (compartidas con resto) ── */
     @keyframes fadeUp {
@@ -501,15 +571,23 @@
       .nav-mobile-btn { display: none; }
 
       .mockup-phone {
-        display: block;
         width: 200px;
-        background: var(--ink);
-        border-radius: 32px;
-        padding: var(--space-3);
-        box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,.1);
+        margin: 0;
         position: absolute;
         bottom: -20px;
         right: -20px;
+      }
+
+      .hero-why {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-6);
+      }
+
+      .hero-why-img {
+        width: 45%;
+        flex-shrink: 0;
+        aspect-ratio: 4 / 3;
       }
     }
 
@@ -579,7 +657,7 @@
       </p>
       <h1 id="hero-title">Tu tarjetita de sellos,<br><em>pero digital</em></h1>
       <p class="hero-sub">
-        Fideliza a tus clientes con un programa de puntos en minutos. Sin apps complicadas — solo escanean el QR y acumulan puntos.
+        Fideliza a los clientes de tu negocio con un programa de puntos en minutos. Sin apps complicadas — solo escanean el QR y acumulan puntos.
       </p>
       <div class="hero-actions">
         <a href="https://app.puntix.com.mx/registro" class="btn-primary" rel="noopener" data-cta-location="hero_primary">
@@ -589,6 +667,7 @@
           Ver cómo funciona
         </a>
       </div>
+
       <div class="hero-trust">
         <div class="hero-avatars" aria-hidden="true">
           <span>☕</span>
@@ -597,6 +676,38 @@
           <span>💅</span>
         </div>
         <span>Para restaurantes, cafeterías, barberías y más</span>
+      </div>
+
+      <div class="hero-why">
+        <img
+          src="/hero-why.webp"
+          alt="Dueño de cafetería revisando el dashboard de Puntix en su negocio"
+          width="480"
+          height="360"
+          loading="lazy"
+          class="hero-why-img"
+        >
+        <div class="hero-why-content">
+          <h3 class="hero-why-title">Tu cliente frecuente vale mucho más de lo que crees</h3>
+          <ul class="hero-why-stats">
+            <li>
+              <span class="hero-why-stat-num">67%</span>
+              <span class="hero-why-stat-label">más gastan los clientes recurrentes vs. nuevos</span>
+            </li>
+            <li>
+              <span class="hero-why-stat-num">93%</span>
+              <span class="hero-why-stat-label">más probabilidad de volver a comprar</span>
+            </li>
+            <li>
+              <span class="hero-why-stat-num">86%</span>
+              <span class="hero-why-stat-label">de clientes satisfechos recomiendan su marca</span>
+            </li>
+            <li>
+              <span class="hero-why-stat-num">75%</span>
+              <span class="hero-why-stat-label">más ganancias con solo 5% más de retención</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="hero-mockup" aria-hidden="true">
@@ -704,6 +815,102 @@
       </div>
     </section>
 
+    <!-- USE CASES -->
+    <section class="usecases-section" id="modelos" aria-labelledby="usecases-title">
+      <div class="container">
+        <div class="usecases-header reveal">
+          <p class="section-tag">🎯 Dos modelos</p>
+          <h2 id="usecases-title">Elige cómo premiar<br>a tus clientes</h2>
+          <p class="section-sub section-sub--centered">Configura el modelo que mejor se adapte a tu negocio. Puntos por consumo o sellos por visita — tú decides.</p>
+        </div>
+        <div class="usecases-grid">
+
+          <!-- Modelo 1: Visitas -->
+          <article class="usecase-card reveal">
+            <header class="usecase-card-header">
+              <span class="usecase-badge usecase-badge--visits">Por visitas</span>
+              <h3>Acumulación de visitas</h3>
+              <p>Como las tarjetitas de cartón, pero digital. Cada visita suma un sello. Al completar la meta, el cliente canjea su recompensa.</p>
+            </header>
+            <div class="usecase-visual">
+              <div class="stamp-example">
+                <div class="stamp-example-header">
+                  <span aria-hidden="true">☕</span>
+                  <div>
+                    <div class="stamp-example-name">Cafetería La Paloma</div>
+                    <div class="stamp-example-rule">10 visitas = 1 café gratis</div>
+                  </div>
+                </div>
+                <div class="stamp-grid" role="img" aria-label="8 de 10 sellos completados">
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--filled" aria-hidden="true">✓</div>
+                  <div class="stamp stamp--empty" aria-hidden="true"></div>
+                  <div class="stamp stamp--empty" aria-hidden="true"></div>
+                </div>
+                <p class="stamp-example-progress">8 de 10 visitas — ¡te faltan 2!</p>
+              </div>
+            </div>
+            <ol class="usecase-flow">
+              <li>Cliente visita tu negocio</li>
+              <li>El cajero registra la visita en segundos</li>
+              <li>El cliente ve sus sellos al instante</li>
+              <li>Al completar la meta, canjea su recompensa</li>
+            </ol>
+          </article>
+
+          <!-- Modelo 2: Puntos por consumo -->
+          <article class="usecase-card reveal reveal--delay-1">
+            <header class="usecase-card-header">
+              <span class="usecase-badge usecase-badge--points">Por consumo</span>
+              <h3>Puntos por monto de compra</h3>
+              <p>Quien más compra, más puntos acumula. Tú defines el tipo de cambio y las recompensas disponibles.</p>
+            </header>
+            <div class="usecase-visual">
+              <div class="points-example">
+                <div class="points-example-header">
+                  <span aria-hidden="true">🍕</span>
+                  <div>
+                    <div class="points-example-name">Restaurante El Sabor</div>
+                    <div class="points-example-rule">$10 de compra = 1 punto</div>
+                  </div>
+                </div>
+                <div class="points-example-display">
+                  <div class="points-example-num">320</div>
+                  <div class="points-example-label">puntos acumulados</div>
+                </div>
+                <div class="points-example-reward">
+                  <span aria-hidden="true">🎁</span>
+                  <div class="points-example-reward-info">
+                    <div class="points-example-reward-name">Platillo gratis</div>
+                    <div class="points-example-reward-cost">500 puntos para canjear</div>
+                  </div>
+                </div>
+                <div class="points-example-bar-wrap">
+                  <div class="points-example-bar">
+                    <div class="points-example-bar-fill points-example-bar-fill--64"></div>
+                  </div>
+                  <span class="points-example-pct">64%</span>
+                </div>
+              </div>
+            </div>
+            <ol class="usecase-flow">
+              <li>El cajero ingresa el monto de la compra</li>
+              <li>El sistema calcula y asigna los puntos</li>
+              <li>El cliente ve su saldo actualizado al instante</li>
+              <li>Canjea sus puntos por la recompensa que elija</li>
+            </ol>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- FEATURES -->
     <section class="features-section" aria-labelledby="features-title">
       <div class="container">
@@ -720,7 +927,7 @@
           </article>
           <article class="feature-card reveal reveal--delay-1">
             <div class="feature-icon" aria-hidden="true">💰</div>
-            <h3>Puntos o visitas</h3>
+            <h3>Acumulación de visitas o puntos por consumo</h3>
             <p>Elige el modelo que mejor se adapte a tu negocio. Puntos por monto de compra o sellos por cada visita — como las tarjetitas de cartón.</p>
           </article>
           <article class="feature-card reveal reveal--delay-2">
@@ -812,7 +1019,7 @@
             <ul class="plan-features">
               <li>1 sucursal</li>
               <li>Hasta 500 clientes</li>
-              <li>Puntos o visitas</li>
+              <li>Acumulación de visitas o puntos por consumo</li>
               <li>Recompensas ilimitadas</li>
               <li>Dashboard básico</li>
               <li>QR personalizado</li>
@@ -832,7 +1039,7 @@
             <ul class="plan-features">
               <li>3 sucursales</li>
               <li>Hasta 2,000 clientes</li>
-              <li>Puntos o visitas</li>
+              <li>Acumulación de visitas o puntos por consumo</li>
               <li>Recompensas ilimitadas</li>
               <li>Dashboard completo</li>
               <li>Gestión de cajeros</li>
@@ -852,7 +1059,7 @@
             <ul class="plan-features">
               <li>Sucursales ilimitadas</li>
               <li>Clientes ilimitados</li>
-              <li>Puntos o visitas</li>
+              <li>Acumulación de visitas o puntos por consumo</li>
               <li>Recompensas ilimitadas</li>
               <li>Dashboard avanzado</li>
               <li>Gestión de cajeros</li>
@@ -918,6 +1125,22 @@
           <h2 id="faq-title">Preguntas frecuentes</h2>
         </div>
         <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Por qué tener un programa de lealtad?</span>
+              <span class="faq-arrow" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <ul class="faq-stats">
+                  <li>Los clientes recurrentes gastan un <strong>67% más</strong> que los nuevos</li>
+                  <li>Los clientes leales tienen un <strong>93% más</strong> de probabilidad de volver a comprar</li>
+                  <li>El <strong>86%</strong> de los clientes satisfechos recomiendan activamente su marca favorita</li>
+                  <li>Un aumento del <strong>5% en retención</strong> puede incrementar las ganancias hasta un <strong>75%</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="faq-item">
             <button class="faq-question" type="button" aria-expanded="false">
               <span>¿Mis clientes necesitan descargar una app?</span>
